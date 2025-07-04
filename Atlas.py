@@ -133,12 +133,3 @@ def play_game():
                 user_score += 1
                 user_turn = True
 
-    # Game end
-    show_score()
-    if user_score >= max_score:
-        speak("Congratulations! You won the game.")
-    else:
-        speak("Oops! I won the game. Better luck next time.")
-
-# Start the game
-play_game()

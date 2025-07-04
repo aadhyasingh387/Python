@@ -1,0 +1,493 @@
+
+<!DOCTYPE html>
+<html>
+<head id="Head1"><title>
+	TodayAttendence
+</title><link type="text/css" rel="stylesheet" href="../App_Themes/Default/Assets/sim.css" /><link type="text/css" rel="stylesheet" href="../App_Themes/Default/Assets/bootstrap.css" /><link type="text/css" rel="stylesheet" href="../App_Themes/Default/Assets/menu.css" /><link type="text/css" rel="stylesheet" href="../App_Themes/Default/Assets/inside.css" /><link href="../App_Themes/Default/Assets/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="App_Themes/Default/Assets/JS/jquery.min.js"></script>
+    
+    
+    <link href="../App_Themes/Default/ui.datepicker.css" rel="stylesheet" type="text/css" />
+    <script src="../ScriptResource/jquery-1.4.3.min.js" type="text/javascript"></script>
+    <script src="../App_Themes/Default/Assets/js/ui.datepicker.js" type="text/javascript"></script>
+    <script src="../ScriptResource/util.js" type="text/javascript"></script>
+    <style>
+        .font-size11
+        {
+            font-size: 11px;
+
+
+
+
+
+
+        }
+
+
+
+        body
+        {
+            margin: 0px;
+            padding: 0px;
+              font-family: 'Cinzel';
+            
+        }
+        .box.active
+        {
+            
+               animation:2s linear 0s normal none infinite progress-bar-stripes;}
+
+            .box h1
+            {
+                color: #ffff00;
+                }
+        .box
+        {
+            border-radius: 5px;
+            /*background-color: #75c523;*/
+            background-color: #308bdc;            
+            width: 520px;
+            margin: 25px auto;
+            height: 250px;
+            color: #ffffff;
+            padding: 10px;
+            font-size:16px;
+            text-align: center;
+           /* background-image:linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0));*/
+            
+         
+            
+        }
+        .right
+        {
+            float:right;
+            position:relative;
+            left:135px;
+            top:-59px;
+            }
+    p
+    {
+        line-height:15px;
+        font-weight:bold;
+        }
+    </style>
+
+
+
+
+  
+
+
+
+
+
+
+</head>
+<body oncontextmenu="return false" oncopy="return false" oncut="return false" onpaste="return false">
+    <form method="post" action="/ISIMSGI/Student/TodayAttendence" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTE4NDE1Njg3NWQYBQUgY3RsMDAkY3RsMDAkTUNQSDEkU0NQSCRHVlN1YmplY3QPZ2QFKWN0bDAwJGN0bDAwJE1DUEgxJFNDUEgkZ3ZEYWlseUF0dGVuZGVuY2UxD2dkBSFjdGwwMCRjdGwwMCRNQ1BIMSRTQ1BIJGd2RGF0ZVdpc2UPZ2QFIGN0bDAwJGN0bDAwJE1DUEgxJFNDUEgkZ3ZNb250aGx5D2dkBSljdGwwMCRjdGwwMCRNQ1BIMSRTQ1BIJGd2QXR0ZW5kYW5jZURldGFpbA9nZNwY7VrS5K93udTI570u11uTttPL/7QzCRe3QmiXq4kR" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="6DD60C95" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdABc6qftuIuuxBe781UTUmD3q1tuCpJXvuLx8my+XDIaHj7w/SvGyFdVNnU/NPwknOJsinlR0MetZmvcnStBio6VAfMqwdYyaugYTXca/YppDLjyIj4f7gSltVSmsJVsgsrFHNkQCsV4Nni9SHeK9OgseKjEVl9nnS4DDGsQpDs0HMEULqmNNHUpkvSvxeOzbXsgYVIp+cHapduzuzTMgrqS15rkfdyYOjhe8OhiSYKJEkhiAiYQktX3yx4VQhffMnLI+6nI16gV2109wb3MPp8aAwr27jJt1tZOp+opNTks7Xz3DzgkajFDuHklT7sPDEJOczDf2ArxN41ggN+T68bZZf+VOnnCJicwuesY/+dnv7RznmmEtFaQXl3L5aOtYk8TAC0ew4Pf1ZNDNtwkAFH3lSo8JjiKiAdq8ClsyIfW8NvY9dq0pm2+JccwWT5246STMdZO/clpcx4DB+uC/Zf6PchRT7CTbOxhdbdg8Qik0WToxdgTl2BxCMok1iVPHTzOnYwSfv13Hcx+pWeFKB+xq" />
+</div>
+    <input type="hidden" name="ctl00$ctl00$hdnForSchoolMaster" id="hdnForSchoolMaster" value="0" />
+    <div>
+        <input type="hidden" id="hdnAppPath" value="/ISIMSGI/" />
+        <input name="ctl00$ctl00$txtCaseCSS" type="text" id="txtCaseCSS" value="textDefault" style="display: none;" />
+        <div class="navbar navbar-inverse navbar-fixed-top noprint">
+            <div class="navbar-inner">
+                <div class="container_top">
+                    <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">
+                        </span>
+                    </button>
+                    <div class="brand">
+                        <span class="left">
+                            <img src="../App_Themes/Default/images/sim-logo.png" class="logo" /></span>
+                        <span class="left"><a href="../Home">SIM</a><div>
+                            Student Interface</div>
+                        </span><span class="left">
+                            <span id="headerImage"><img src="../App_Themes/Default/images/for.png" width="21" height="57" /></span>
+                        </span>
+                        <span id="collegelogo"><span class="left"> <img src="../App_Themes/Default/images/college-logo.png" class="collegelogo" /></span></span>
+                        <span class="left">
+                            <span id="HeaderName"></span>
+
+                       
+         
+   <div  style=" font-size: 22px; font-family: "Euphemia"; font-weight: normal; color: #333333; line-height: 1%;"  > <h1> &nbsp;&nbsp;&nbsp;&nbsp;HCST </h1> </div>
+    
+
+
+
+                        </span>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+   
+   
+    <div class="clsRounded">
+        <div id="MCPH1_PageHeader" class="pageHeader">
+            <span id="MCPH1_spnPageTitle" style="margin-left: 5px;"></span>
+        </div>
+        
+    <input type="hidden" name="ctl00$ctl00$MCPH1$SCPH$hdnStudentId" id="hdnStudentId" value="1241" />
+
+
+
+<div><br/><br/><br/></div><div><br/><br/><br/></div>
+    <div class="box" style="display:none">
+        <h1>
+            iSIM </br>
+            
+        </h1>
+        <p>        
+           This Page is  Under Maintenance.. </p><p> 
+        </p><p>
+         </p><p></p>
+        <br/>
+        
+    </div>
+
+
+<div >
+
+    <div id="Div1" class="container">
+        <div class="primary_container">
+            <h1>
+                Attendance Detail
+            </h1>
+
+              <div id="MCPH1_SCPH_TabContainer">
+            <div style="color: #7c7c7c;">
+                <table>
+                    <tr>
+                        <td>
+                            Admission No
+                        </td>
+                        <td>
+                            <input name="ctl00$ctl00$MCPH1$SCPH$txtAdm" type="text" value="HCST22CS037" id="txtAdm" disabled="disabled" class="aspNetDisabled ctrltxt_92" />
+                        </td>
+                        <td>
+                            Student Name
+                        </td>
+                        <td>
+                            <input name="ctl00$ctl00$MCPH1$SCPH$txtStdName" type="text" value="Agam Singh" id="txtStdName" disabled="disabled" class="aspNetDisabled ctrltxt_92" />
+                        </td>
+                        <td>
+                            College
+                        </td>
+                        <td>
+                            <input name="ctl00$ctl00$MCPH1$SCPH$txtCollege" type="text" value="HCST" id="txtCollege" disabled="disabled" class="aspNetDisabled ctrltxt_65" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Session
+                        </td>
+                        <td>
+                            <input name="ctl00$ctl00$MCPH1$SCPH$txtSession" type="text" value="2022" id="txtSession" disabled="disabled" class="aspNetDisabled ctrltxt_65" />
+                        </td>
+                        <td>
+                            Program
+                        </td>
+                        <td>
+                            <input name="ctl00$ctl00$MCPH1$SCPH$txtProgram" type="text" value="B.Tech(CS)" id="txtProgram" disabled="disabled" class="aspNetDisabled ctrltxt_92" />
+                        </td>
+                        <td>
+                            Semester
+                        </td>
+                        <td>
+                            <input name="ctl00$ctl00$MCPH1$SCPH$txtSemester" type="text" value="Sem VI" id="txtSemester" disabled="disabled" class="aspNetDisabled ctrltxt_65" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Enrollment No
+                        </td>
+                        <td>
+                            <input name="ctl00$ctl00$MCPH1$SCPH$txtEnrollmentNo" type="text" id="txtEnrollmentNo" disabled="disabled" class="aspNetDisabled ctrltxt_65" />
+                        </td>
+                        <td>
+                            Roll No
+                        </td>
+                        <td>
+                            <input name="ctl00$ctl00$MCPH1$SCPH$txtRollNo" type="text" value="2200640100011" id="txtRollNo" disabled="disabled" class="aspNetDisabled ctrltxt_92" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="fieldBlock" style="text-align: center; padding-top: 5px;">
+                <input type="submit" name="ctl00$ctl00$MCPH1$SCPH$btntodayAtt" value="Today Attendance" id="MCPH1_SCPH_btntodayAtt" class="ctrlButtonCommon" />
+                <input type="submit" name="ctl00$ctl00$MCPH1$SCPH$btnMonthlyAtt" value="Monthly Attendance" id="MCPH1_SCPH_btnMonthlyAtt" class="ctrlButtonCommon" />
+                <input type="submit" name="ctl00$ctl00$MCPH1$SCPH$btnSubjectWiseAtt" value="Subject Wise Attendance" id="MCPH1_SCPH_btnSubjectWiseAtt" class="ctrlButtonCommon" />
+                <input type="submit" name="ctl00$ctl00$MCPH1$SCPH$btnSemAtt" value="Semester Attendance" id="MCPH1_SCPH_btnSemAtt" class="ctrlButtonCommon" />
+                <input type="submit" name="ctl00$ctl00$MCPH1$SCPH$btnDateWiseAtt" value="Date Wise" id="MCPH1_SCPH_btnDateWiseAtt" class="ctrlButtonCommon" />
+            </div>
+            <table class="table font-size11" style="width: 90% !important;" align="center">
+                <tr>
+                    <td>
+                        <strong>Percentage Above 90:</strong>
+                    </td>
+                    <td valign="middle" style="vertical-align: middle !important;">
+                        <span style="width: 20px; height: 20px; background-color: #006600; display: block;">
+                            &nbsp;</span>
+                    </td>
+                    <td>
+                        <strong>Between 75 and 89.99:</strong>
+                    </td>
+                    <td valign="middle" style="vertical-align: middle !important;">
+                        <span style="width: 20px; height: 20px; background-color: #00cc00; display: block;">
+                            &nbsp;</span>
+                    </td>
+                    <td>
+                        <strong>Between 60 and 74.99:</strong>
+                    </td>
+                    <td valign="middle" style="vertical-align: middle !important;">
+                        <span style="width: 20px; height: 20px; background-color: #0000ff; display: block;">
+                            &nbsp;</span>
+                    </td>
+                    <td valign="middle" style="vertical-align: middle !important;">
+                        <strong>Between 45 and 59.99:</strong>
+                    </td>
+                    <td valign="middle" style="vertical-align: middle !important;">
+                        <span style="width: 20px; height: 20px; background-color: #ffc0cb; display: block;">
+                            &nbsp;</span>
+                    </td>
+                    <td valign="middle" style="vertical-align: middle !important;">
+                        <strong>Less than 45:</strong>
+                    </td>
+                    <td valign="middle" style="vertical-align: middle !important;">
+                        <span style="width: 20px; height: 20px; background-color: #ff0000; display: block;">
+                            &nbsp;</span>
+                    </td>
+                </tr>
+            </table>
+            <div id="MCPH1_SCPH_DefaultAtt" class="GridInnerContent" style="display: none;">
+                <div class="sectionHeader" style="font-weight: bold;">
+                    Semester Attendance
+                </div>
+                <div class="GridInnerContent top-heading border-radius" id="gridContainer">
+                    <div>
+
+</div>
+                </div>
+            </div>
+            <div id="MCPH1_SCPH_SubjectAtt" class="GridInnerContent">
+                <div class="sectionHeader" style="font-weight: bold;">
+                    Subject Attendance
+                </div>
+                <div>
+                    <div class="fieldBlock" id="Div2" style="text-align: center; padding-top: 5px;">
+                        Date From:(dd/mm/yyyy)<input name="ctl00$ctl00$MCPH1$SCPH$txtDFrom" type="text" id="txtDFrom" class="ctrltxt CDate" style="width:100px;" />
+                        To:
+                        <input name="ctl00$ctl00$MCPH1$SCPH$txtDTo" type="text" id="txtDTo" class="ctrltxt CDate" style="width:100px;" />
+                        <input type="submit" name="ctl00$ctl00$MCPH1$SCPH$btnShowSubject" value="Show" onclick="return ChkValidationSubjectShow();" id="MCPH1_SCPH_btnShowSubject" class="ctrlButtonCommon" />
+                    </div>
+                </div>
+                <div class="GridInnerContent top-heading border-radius" id="gridContainer">
+                    <div>
+
+</div>
+                </div>
+            </div>
+            <div id="MCPH1_SCPH_todayatt" class="GridInnerContent">
+                <div class="sectionHeader">
+                    Today Attendance
+                    <span id="MCPH1_SCPH_lblDataTime"></span>
+                </div>
+                <div class="GridInnerContent top-heading border-radius " id="gridContainer" style="border-style: thin;">
+                    <div>
+
+</div>
+                </div>
+            </div>
+            <div id="MCPH1_SCPH_MonthlyAtt" class="GridInnerContent" style="display: none;">
+                <div class="sectionHeader">
+                    Monthly Attendance
+                </div>
+                <div class="GridInnerContent top-heading border-radius" id="gridContainer">
+                    <div>
+
+</div>
+                </div>
+            </div>
+            <div id="MCPH1_SCPH_DateWiseAtt" class="GridInnerContent" style="display: none;">
+                <div class="sectionHeader">
+                    Date Wise Attendance
+                </div>
+                <div class="GridInnerContent top-heading border-radius " id="gridContainer">
+                    <div class="fieldBlock" id="textDateContainer" style="text-align: center; padding-top: 5px;">
+                        Date From:(dd/mm/yyyy)<input name="ctl00$ctl00$MCPH1$SCPH$txtFrom" type="text" id="txtFrom" class="ctrltxt CDate" style="width:100px;" />
+                        To:
+                        <input name="ctl00$ctl00$MCPH1$SCPH$txtTo" type="text" id="txtTo" class="ctrltxt CDate" style="width:100px;" />
+                        <input type="submit" name="ctl00$ctl00$MCPH1$SCPH$btnShowAtt" value="Show" onclick="return ChkValidation();" id="MCPH1_SCPH_btnShowAtt" class="ctrlButtonCommon" />
+                    </div>
+                    <div>
+
+</div>
+                </div>
+            </div>
+            </div>
+            <div id="MCPH1_SCPH_TabContainer1">
+                <b>
+                    <span id="MCPH1_SCPH_lblMsg" style="color: #FF0000"></span></b>
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="DivMsg" style="left: 500px; bottom: 500px;"></div>
+    <script type="text/javascript">
+
+        $(window).load(function myfunction() {
+            SetDateValidationPage("CDate", "DivMsg");
+            var maxdat = new Date();
+            $(".CDate").datepicker(
+        {
+            changeMonth: true,
+            changeYear: true,
+            maxDate: maxdat,
+            dateFormat: 'dd/mm/yy'
+
+        }
+    );
+            HideDPDiv();
+
+            DisplayMessageContainer('DivMsg');
+        });
+
+        function SetDateValidationPage(ClassName, MsgContainer) {
+
+            $("." + ClassName).live("blur", function () { ValidateDate(this, MsgContainer); });
+            $("." + ClassName).live("keydown", function (e) { TypeDate(e, this); });
+        }
+
+        function HideDPDiv() {
+            var dv = document.getElementById("ui-datepicker-div");
+            if (dv) {
+                dv.style.display = 'none';
+            }
+
+        }
+
+        function ChkValidation() {
+            var txtFrom = document.getElementById('txtFrom').value;
+            var txtTo = document.getElementById('txtTo').value;
+
+
+            if (txtFrom == "" && txtTo == "") {
+                document.getElementById('txtFrom').style.border = "1px solid red";
+                document.getElementById('txtTo').style.border = "1px solid red";
+                return false;
+            }
+            if (txtFrom == "") {
+                document.getElementById('txtTo').style.border = "1px solid silver";
+                document.getElementById('txtFrom').style.border = "1px solid red";
+                return false;
+            }
+            if (txtTo == "") {
+                document.getElementById('txtTo').style.border = "1px solid red";
+                document.getElementById('txtFrom').style.border = "1px solid silver";
+                return false;
+            }
+            if (txtFrom != "" && txtTo != "") {
+                return true;
+            }
+        }
+
+        function ChkValidationSubjectShow() {
+            var txtFrom = document.getElementById('txtDFrom').value;
+            var txtTo = document.getElementById('txtDTo').value;
+
+
+            if (txtFrom == "" && txtTo == "") {
+                document.getElementById('txtDFrom').style.border = "1px solid red";
+                document.getElementById('txtDTo').style.border = "1px solid red";
+                return false;
+            }
+            if (txtFrom == "") {
+                document.getElementById('txtDTo').style.border = "1px solid silver";
+                document.getElementById('txtDFrom').style.border = "1px solid red";
+                return false;
+            }
+            if (txtTo == "") {
+                document.getElementById('txtDTo').style.border = "1px solid red";
+                document.getElementById('txtDFrom').style.border = "1px solid silver";
+                return false;
+            }
+            if (txtFrom != "" && txtTo != "") {
+                return true;
+            }
+        }
+       
+    </script>
+
+    </div>
+
+        <div class="noprint">
+            <div id="footer-base">
+                <div class="container_footer">
+                    <div class="left">
+                        Copyright © 2017 Global Infoways @ All rights reserved.</div>
+                </div>
+            </div>
+        </div>
+        <div class="noprint">
+            <a title="Back to top" href="#" class=" scrollup back-to-top-fancy" id="back-to-top"
+                style="opacity: 0.7; display: inline; display: none;">Top</a></div>
+    </div>
+    </form>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            localStorage.setItem("ForSchool", $("#hdnForSchoolMaster").val());
+            setCommonThings();
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 100) {
+                    $('.scrollup').fadeIn();
+                } else {
+                    $('.scrollup').fadeOut();
+                }
+            });
+
+            $('.scrollup').click(function () {
+                $("html, body").animate({ scrollTop: 0 }, 600);
+                return false;
+            });
+
+        });
+        function setCommonThings() {
+            isSchool = localStorage.getItem("ForSchool");
+            if (parseInt(isSchool) == 1) {
+                var x = $(document).ready(function (item) {
+                    var str1 = $(this).find("span,div[class^='sectionHeader'],label,th,a,td,b");
+                    for (var i = 0; i < str1.length; i++) {
+                        if (str1[i].firstChild != null) {
+                            if (str1[i].firstChild.data != undefined) {
+                                str1[i].firstChild.data = str1[i].firstChild.data.replace("College", "School");
+                                str1[i].firstChild.data = str1[i].firstChild.data.replace("Program", "Class");
+                                str1[i].firstChild.data = str1[i].firstChild.data.replace("Semester", "Board");
+                                str1[i].firstChild.data = str1[i].firstChild.data.replace("Group", "Section");
+                                str1[i].firstChild.data = str1[i].firstChild.data.replace("Prog", "Class");
+                                str1[i].firstChild.data = str1[i].firstChild.data.replace("Sem", "Board");
+                                str1[i].firstChild.data = str1[i].firstChild.data.replace("Course", "Class");
+                                str1[i].firstChild.data = str1[i].firstChild.data.replace("Prg", "Class");
+                                str1[i].firstChild.data = str1[i].firstChild.data.replace("Branch ", "Class ");
+                                str1[i].firstChild.data = str1[i].firstChild.data.replace("Branch", "Class ");
+                                str1[i].firstChild.data = str1[i].firstChild.data.replace("Tri-Sem", "Board");
+                            }
+                        }
+                    }
+                });
+            }
+        }
+    </script>
+</body>
+</html>
